@@ -75,7 +75,7 @@ export function EntryEditor({ initialContent = "", initialId, initialIsPrivate =
         }, 1500); // 1.5s debounce
 
         return () => clearTimeout(timeout);
-    }, [content, isPrivate, entryId, wordCount, charCount, supabase]);
+    }, [content, isPrivate, entryId, wordCount, charCount, supabase, initialContent, initialIsPrivate]);
 
     const handleDelete = async () => {
         if (!entryId) return;

@@ -164,7 +164,7 @@ export function RelationshipManager() {
 
                             {/* Enter Code */}
                             <form onSubmit={handleJoin} className="space-y-2">
-                                <label className="text-xs font-medium uppercase text-muted-foreground">Enter Partner's Code</label>
+                                <label className="text-xs font-medium uppercase text-muted-foreground">Enter Partner&apos;s Code</label>
                                 <div className="flex gap-2">
                                     <input
                                         type="text"

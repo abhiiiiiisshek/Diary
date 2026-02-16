@@ -12,6 +12,8 @@ interface ThemeConfig {
     foreground: string;
     radius: string;
     font: string;
+    ring: string; // Added
+    card: string; // Added
 }
 
 const defaultTheme: ThemeConfig = {
@@ -22,6 +24,8 @@ const defaultTheme: ThemeConfig = {
     foreground: "250 250 250",
     radius: "0.75rem",
     font: "Inter",
+    ring: "255 100 100", // Added
+    card: "20 20 25", // Added
 };
 
 interface ThemeContextType {
@@ -73,6 +77,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
         setVar("background", theme.background);
         setVar("foreground", theme.foreground);
         setVar("radius", theme.radius);
+        setVar("ring", theme.ring); // Added
+        setVar("card", theme.card); // Added
         // Font handling might require loading fonts or mapping names to stacks
         // simpler for now:
         if (theme.font === 'Inter') {
