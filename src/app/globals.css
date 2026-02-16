@@ -2,32 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* Default Dark Theme (Elegant/Premium) */
+    --background: 10 10 15; /* Very dark mostly black */
+    --foreground: 250 250 250; /* Off-white */
+    
+    --primary: 255 100 100; /* Subtle Red/Pink accent */
+    --secondary: 40 40 50; /* Dark slate */
+    --accent: 255 200 100; /* Gold/Amber */
+    
+    --card: 20 20 25; /* Slightly lighter customized dark */
+    --card-foreground: 250 250 250;
+    
+    --border: 40 40 50;
+    --input: 30 30 35;
+    --ring: 255 100 100;
+    
+    --radius: 0.75rem;
+    
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+  }
+
+  /* Example Light Theme (if needed later, but focusing on dark premium) */
+  .light {
+    --background: 255 255 255;
+    --foreground: 10 10 15;
+    /* ... other light mode vars */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* GSAP / Animation Utilities */
+.reveal-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
