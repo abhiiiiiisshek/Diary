@@ -1,5 +1,5 @@
 # DualDiary
-
+this read me files confirm that changes are done
 A premium, private diary for two. Built with Next.js 14, Supabase, TailwindCSS, and Framer Motion.
 
 ## Getting Started
